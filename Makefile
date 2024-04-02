@@ -7,21 +7,21 @@ HEADERS = header.hpp
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
-CC = c++
+CXX = c++
 
-CFLAGS = -g -Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98 -pedantic
 
 RM = rm -fr
 
 all: $(NAME)
 
 $(NAME):	$(OBJS) $(HEADERS)
-	@$(CC) $(OBJS) $(CFLAGS) -o $(NAME)
+	@$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
 	@echo "\033[0;32mCompilation successful. \033[0;37m Executable name: ./$(NAME)\033[0m"
 
 $(OBJDIR)/%.o: %.cpp $(HEADERS)
 	@mkdir -p $(OBJDIR)
-	@$(CC) $(CFLAGS) -c $< -o $@
+	@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)
