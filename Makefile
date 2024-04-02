@@ -27,7 +27,7 @@ clean:
 					@$(RM) $(OBJS)
 					@$(RM) $(OBJDIR)
 
-fclean:		clean
+fclean:			clean
 					@$(RM) $(NAME)
 
 re:				fclean all
