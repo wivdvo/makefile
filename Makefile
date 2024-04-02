@@ -1,8 +1,8 @@
-NAME = test
+NAME = btc
 
-SRCS =	test.cpp 
+SRCS =	main.cpp 
 
-HEADERS = header.hpp
+HEADERS = 
 
 OBJDIR = obj
 OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
@@ -25,6 +25,7 @@ $(OBJDIR)/%.o: %.cpp $(HEADERS)
 
 clean:
 	@$(RM) $(OBJS)
+	@$(RM) $(OBJDIR)
 
 fclean:		clean
 	@$(RM) $(NAME)
