@@ -1,4 +1,4 @@
-NAME = btc
+NAME = test
 
 SRCS =	main.cpp 
 
