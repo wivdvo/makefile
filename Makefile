@@ -1,17 +1,17 @@
-NAME = test
+NAME =		test
 
-SRCS =	main.cpp 
+SRCS =		main.cpp 
 
 HEADERS = 
 
-OBJDIR = obj
-OBJS = $(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
+OBJDIR =	obj
+OBJS =		$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
-CXX = c++
+CXX =		c++
 
-CXXFLAGS = -g -Wall -Werror -Wextra -std=c++98 -pedantic
+CXXFLAGS =	-g -Wall -Werror -Wextra -std=c++98 -pedantic
 
-RM = rm -fr
+RM =		rm -fr
 
 all: $(NAME)
 
@@ -27,7 +27,7 @@ clean:
 					@$(RM) $(OBJS)
 					@$(RM) $(OBJDIR)
 
-	fclean:		clean
+fclean:		clean
 					@$(RM) $(NAME)
 
 re:				fclean all
