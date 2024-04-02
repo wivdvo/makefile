@@ -15,21 +15,21 @@ RM = rm -fr
 
 all: $(NAME)
 
-$(NAME):	$(OBJS) $(HEADERS)
-	@$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
-	@echo "\033[0;32mCompilation successful. \033[0;37m Executable name: ./$(NAME)\033[0m"
+$(NAME):		$(OBJS) $(HEADERS)
+					@$(CXX) $(OBJS) $(CXXFLAGS) -o $(NAME)
+					@echo "\033[0;32mCompilation successful. \033[0;37m Executable name: ./$(NAME)\033[0m"
 
-$(OBJDIR)/%.o: %.cpp $(HEADERS)
-	@mkdir -p $(OBJDIR)
-	@$(CXX) $(CXXFLAGS) -c $< -o $@
+$(OBJDIR)/%.o:	%.cpp $(HEADERS)
+					@mkdir -p $(OBJDIR)
+					@$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	@$(RM) $(OBJS)
-	@$(RM) $(OBJDIR)
+					@$(RM) $(OBJS)
+					@$(RM) $(OBJDIR)
 
-fclean:		clean
-	@$(RM) $(NAME)
+	fclean:		clean
+					@$(RM) $(NAME)
 
-re:			fclean all
+re:				fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:			all clean fclean re
