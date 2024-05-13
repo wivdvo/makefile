@@ -14,7 +14,7 @@ OBJS =		$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 CXX =		c++
 
-CXXFLAGS =	-g -std=c++98 -Wall -Werror -Wextra -pedantic
+CXXFLAGS =	-g #-std=c++98 -Wall -Werror -Wextra -pedantic
 
 RM =		rm -fr
 
@@ -37,4 +37,7 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+valgrind:		
+					valgrind --track-fds=yes --leak-check=full --show-leak-kinds=all ./$(NAME)
+
+.PHONY:			all clean fclean re valgrind
