@@ -37,4 +37,13 @@ fclean:			clean
 
 re:				fclean all
 
-.PHONY:			all clean fclean re
+valgrind:		all
+					valgrind --track-fds=yes --leak-check=full --show-leak-kinds=all ./$(NAME)
+
+leaks:			all
+					leaks -atExit -- ./$(NAME)
+
+run:			all
+					./$(NAME)
+
+.PHONY:			all clean fclean re valgrind run
