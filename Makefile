@@ -5,16 +5,16 @@ RESET =		\033[0m
 
 NAME =		test
 
-SRCS =		main.cpp 
+SRCS =		main.cpp
 
-HEADERS = 
+HEADERS =
 
 OBJDIR =	obj
 OBJS =		$(addprefix $(OBJDIR)/, $(SRCS:.cpp=.o))
 
 CXX =		c++
 
-CXXFLAGS =	-g #-std=c++98 -Wall -Werror -Wextra -pedantic
+CXXFLAGS =	-g #-Wall -Werror -Wextra -pedantic # -std=c++98
 
 RM =		rm -fr
 
